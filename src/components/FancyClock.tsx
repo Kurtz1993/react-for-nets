@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import styles from "./FancyClock.module.scss";
 
-class FancyClock extends Component {
+interface FancyClockState {
+  hoursDegrees: string;
+  secondsDegrees: string;
+  minsDegrees: string;
+}
+
+class FancyClock extends Component<any, FancyClockState> {
   secondHand = React.createRef<HTMLDivElement>();
   minsHand = React.createRef<HTMLDivElement>();
   hourHand = React.createRef<HTMLDivElement>();
@@ -17,8 +23,7 @@ class FancyClock extends Component {
     this.setDate();
   }
 
-  componentWillUnmount() {
-  }
+  componentWillUnmount() {}
 
   setDate() {
     const date = new Date();
@@ -30,15 +35,9 @@ class FancyClock extends Component {
     return (
       <div className={styles.clock}>
         <div className={styles.clockFace}>
-          <div
-            className={styles.clockHand + " hour-hand"}
-          />
-          <div
-            className={styles.clockHand + " min-hand"}
-          />
-          <div
-            className={styles.clockHand + " second-hand"}
-          />
+          <div className={styles.clockHand + " hour-hand"} />
+          <div className={styles.clockHand + " min-hand"} />
+          <div className={styles.clockHand + " second-hand"} />
         </div>
       </div>
     );
