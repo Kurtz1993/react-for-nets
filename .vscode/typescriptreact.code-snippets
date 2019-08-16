@@ -1,0 +1,154 @@
+{
+	"Import module with destructuring": {
+		"prefix": "impd",
+		"body": "import { $2 } from '$1';",
+		"description": "Imports a module with destructuring.",
+		"scope": "typescript,typescriptreact"
+	},
+	"Import module with name": {
+		"prefix": "impwn",
+		"body": "import $2 from '$1';",
+		"description": "Imports a module with the given name.",
+		"scope": "typescript,typescriptreact"
+	},
+	"Import default module": {
+		"prefix": "impm",
+		"body": "import '$1';",
+		"description": "Imports a module or asset.",
+		"scope": "typescript,typescriptreact"
+	},
+	"Object destructure": {
+		"prefix": "ods",
+		"body": "const { $2 } = $1;",
+		"scope": "typescript,typescriptreact"
+	},
+	"Array destructure": {
+		"prefix": "ads",
+		"body": "const [$2] = $1;",
+		"scope": "typescript,typescriptreact"
+	},
+	"React Class Component": {
+		"prefix": "rcc",
+		"body": [
+			"import React, { Component } from 'react';",
+			"",
+			"interface $1State {",
+			"\t$2",
+			"}",
+			"",
+			"class ${1:Name} extends Component<any, $1State> {",
+			"\tstate = {$3};",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t$4",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default $1;",
+			""
+		],
+		"scope": "typescriptreact"
+	},
+	"React Funcional Component": {
+		"prefix": "rfc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"const ${1:Name}: React.FC<${2:any}> = ${3:props} => (",
+			"\t$4",
+			");",
+			"",
+			"export default $1;",
+			""
+		],
+		"scope": "typescriptreact"
+	},
+	"Component Did Mount": {
+		"prefix": "cdm",
+		"body": [
+			"componentDidMount() {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Component Will Mount": {
+		"prefix": "cwm",
+		"body": [
+			"componentWillMount() {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Should Component Update": {
+		"prefix": "scu",
+		"body": [
+			"shouldComponentUpdate(nextProps: ${1:any}, nextState: ${2:any}) {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Component Did Update": {
+		"prefix": "cdu",
+		"body": [
+			"componentDidUpdate(prevProps: ${1:any}, prevState: ${2:any}) {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Component Will Unmount": {
+		"prefix": "cwun",
+		"body": [
+			"componentWillUnmount() {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Component Did Catch": {
+		"prefix": "cdc",
+		"body": [
+			"componentDidCatch(error, info) {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Set state": {
+		"prefix": "ss",
+		"body": "this.setState({ ${1:key}: ${2:value} });",
+		"scope": "typescriptreact"
+	},
+	"Set state with prevState": {
+		"prefix": "ssp",
+		"body": [
+			"this.setState(prevState => {",
+			"\t$1",
+			"});"
+		],
+		"scope": "typescriptreact"
+	},
+	"Get Derived State From Props": {
+		"prefix": "gdsp",
+		"body": [
+			"static getDerivedStateFromProps(props: ${1:any}, state: ${2:any}) {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	},
+	"Get Snapshot Before Update": {
+		"prefix": "gsbu",
+		"body": [
+			"getSnapshotBeforeUpdate(prevProps: ${1:any}, prevState: ${2:any}, snapshot: ${3:any}) {",
+			"\t$1",
+			"}"
+		],
+		"scope": "typescriptreact"
+	}
+}
