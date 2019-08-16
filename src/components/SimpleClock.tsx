@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-interface SimpleClockState {
-  date: Date;
-}
-
-class SimpleClock extends React.Component<any, SimpleClockState> {
+class SimpleClock extends React.Component<any, { date: Date }> {
   state = {
-    date: new Date()
+    date: new Date(),
   };
 
   render() {
