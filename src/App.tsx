@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import SimpleClock from './components/SimpleClock';
+import FancyClock from './components/FancyClock';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <SimpleClock />
+      <FancyClock />
     </div>
   );
 }

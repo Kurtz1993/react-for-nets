@@ -21,12 +21,30 @@ class FancyClock extends Component<any, FancyClockState> {
 
   componentDidMount() {
     this.setDate();
+
+    this.secondsInterval = window.setInterval(this.setDate.bind(this), 1000);
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    window.clearInterval(this.secondsInterval as number);
+  }
 
   setDate() {
     const date = new Date();
+
+    const hour = date.getHours();
+    const mins = date.getMinutes();
+    const seconds = date.getSeconds();
+    // Calculate the position of the hands, in degrees.
+    const hourdeg = (hour / 12) * 360 + (mins / 60) * 30 + 90;
+    const minsdeg = (mins / 60) * 360 + (seconds / 60) * 6 + 90;
+    const secondsdeg = (seconds / 60) * 360 + 90;
+    // Use those degrees as a CSS prop.
+    const hoursDegrees = `rotate(${hourdeg}deg)`;
+    const minsDegrees = `rotate(${minsdeg}deg)`;
+    const secondsDegrees = `rotate(${secondsdeg}deg)`;
+
+    this.setState({ hoursDegrees, minsDegrees, secondsDegrees });
   }
 
   render() {
@@ -35,9 +53,21 @@ class FancyClock extends Component<any, FancyClockState> {
     return (
       <div className={styles.clock}>
         <div className={styles.clockFace}>
-          <div className={styles.clockHand + " hour-hand"} />
-          <div className={styles.clockHand + " min-hand"} />
-          <div className={styles.clockHand + " second-hand"} />
+          <div
+            style={{ transform: hoursDegrees }}
+            className={styles.clockHand + " hour-hand"}
+            ref={this.hourHand}
+          />
+          <div
+            style={{ transform: minsDegrees }}
+            className={styles.clockHand + " min-hand"}
+            ref={this.minsHand}
+          />
+          <div
+            style={{ transform: secondsDegrees }}
+            className={styles.clockHand + " second-hand"}
+            ref={this.secondHand}
+          />
         </div>
       </div>
     );

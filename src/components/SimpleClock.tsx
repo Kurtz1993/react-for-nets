@@ -5,6 +5,14 @@ class SimpleClock extends Component<any, { date: Date }> {
     date: new Date(),
   };
 
+  constructor(props: any) {
+    super(props);
+
+    window.setInterval(() => {
+      this.setState({ date: new Date() });
+    }, 1000);
+  }
+
   render() {
     return (
       // simplified version...
