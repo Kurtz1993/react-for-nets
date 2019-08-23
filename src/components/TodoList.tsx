@@ -9,7 +9,7 @@ interface TodoListState {
 class TodoList extends Component<any, TodoListState> {
   state = {
     todos: [
-      { todo: "fdjakfdjlas", done: true },
+      { todo: "Ir por kekas :V!", done: true },
       { todo: "Take out the trash", done: false },
       { todo: "Learn React", done: false },
     ],
