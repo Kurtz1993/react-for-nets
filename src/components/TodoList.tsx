@@ -17,8 +17,7 @@ class TodoList extends Component<any, TodoListState> {
 
   constructor(props: any) {
     super(props);
-
-    this.handleTodoChange.bind(this);
+    this.handleTodoChange = this.handleTodoChange.bind(this);
   }
 
   handleTodoChange(todo: string): void {
