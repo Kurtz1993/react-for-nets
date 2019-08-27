@@ -1,0 +1,35 @@
+$nav-blue: #458;
+
+.nav {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: $nav-blue;
+  color: white;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  &__logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    cursor: pointer;
+    line-height: 60px;
+    padding: 0 1rem;
+    transition: background-color 0.2s ease-in;
+
+    &--active,
+    &:hover {
+      background-color: darken($nav-blue, 10%);
+    }
+  }
+}
