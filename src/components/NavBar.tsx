@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../logo.svg";
 import "./NavBar.scss";
 
@@ -9,8 +11,13 @@ const NavBar: FC = () => (
     </div>
 
     <div className="nav__links">
-      <span className="nav__link">Contact</span>
-      <span className="nav__link">About</span>
+      <Link className="nav__link" to="/contact">
+        Contact
+      </Link>
+      <Link className="nav__link" to="/about">
+        About
+      </Link>
+      {/* <span className="nav__link">About</span> */}
     </div>
   </nav>
 );

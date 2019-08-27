@@ -22,6 +22,7 @@ $nav-blue: #458;
 
   &__link {
     display: block;
+    color: white;
     cursor: pointer;
     line-height: 60px;
     padding: 0 1rem;
@@ -29,6 +30,7 @@ $nav-blue: #458;
 
     &--active,
     &:hover {
+      color: white;
       background-color: darken($nav-blue, 10%);
     }
   }
